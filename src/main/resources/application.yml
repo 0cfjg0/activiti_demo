@@ -1,0 +1,18 @@
+server:
+  port: 8989
+spring:
+  datasource:
+    username: root
+    password: heima123
+    url: jdbc:mysql://192.168.200.146:3306/activiti-db?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&nullCatalogMeansCurrent=true&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #日志的相关配置
+  activiti:
+    #记录所有历史数据，包括流程实例的每个活动、任务和变量的详细信息。
+    history-level: full
+    #是否需要使用历史表,默认false不使用,而配置true是使用历史表
+    db-history-used: true
+    #流程自动部署，关闭，需要手动部署流程 服务启动的时候自动检查resources目录下的bpmn文件 如果为true自动部署流程
+    check-process-definitions: false
+    #关闭启动服务自动框架部署
+    deployment-mode: never-fail
