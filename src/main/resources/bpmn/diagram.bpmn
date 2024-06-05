@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="sample-diagram" targetNamespace="http://activiti.org/bpmn" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd">
+  <bpmn2:process id="Process_1" isExecutable="true">
+    <bpmn2:startEvent id="StartEvent_1">
+      <bpmn2:outgoing>Flow_1h85rip</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:userTask id="Activity_1gpabrk" name="填写请假单">
+      <bpmn2:incoming>Flow_1h85rip</bpmn2:incoming>
+      <bpmn2:outgoing>Flow_1k5jgj0</bpmn2:outgoing>
+    </bpmn2:userTask>
+    <bpmn2:userTask id="Activity_03wd1ps" name="经理审批">
+      <bpmn2:incoming>Flow_1k5jgj0</bpmn2:incoming>
+      <bpmn2:outgoing>Flow_1tg2vsf</bpmn2:outgoing>
+    </bpmn2:userTask>
+    <bpmn2:endEvent id="Event_1yp5q5u">
+      <bpmn2:incoming>Flow_1tg2vsf</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="Flow_1h85rip" sourceRef="StartEvent_1" targetRef="Activity_1gpabrk" />
+    <bpmn2:sequenceFlow id="Flow_1k5jgj0" sourceRef="Activity_1gpabrk" targetRef="Activity_03wd1ps" />
+    <bpmn2:sequenceFlow id="Flow_1tg2vsf" sourceRef="Activity_03wd1ps" targetRef="Event_1yp5q5u" />
+  </bpmn2:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNEdge id="Flow_1h85rip_di" bpmnElement="Flow_1h85rip">
+        <di:waypoint x="438" y="258" />
+        <di:waypoint x="520" y="258" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1k5jgj0_di" bpmnElement="Flow_1k5jgj0">
+        <di:waypoint x="620" y="258" />
+        <di:waypoint x="720" y="258" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1tg2vsf_di" bpmnElement="Flow_1tg2vsf">
+        <di:waypoint x="820" y="258" />
+        <di:waypoint x="912" y="258" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="402" y="240" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1gpabrk_di" bpmnElement="Activity_1gpabrk">
+        <dc:Bounds x="520" y="218" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_03wd1ps_di" bpmnElement="Activity_03wd1ps">
+        <dc:Bounds x="720" y="218" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1yp5q5u_di" bpmnElement="Event_1yp5q5u">
+        <dc:Bounds x="912" y="240" width="36" height="36" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn2:definitions>
